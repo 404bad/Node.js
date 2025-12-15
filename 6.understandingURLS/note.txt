@@ -1,0 +1,25 @@
+URL = Uniform Resource Locator
+
+Http:hyper text transfer protocol
+https: http secure
+
+http is a protocol
+
+https://kailashbadu.com.np
+https ---> protocol
+kailashbadu.com.np ---> Domain (user freindky name of ip address of my server)
+
+/ root path
+
+/about
+/contact --> these are paths
+
+//project/game ---> nested paths
+
+
+query parameters
+kailashbadu.com/about?userId=1&a=2
+
+https://www.google.com/search?q=javasctipt&rlz=1C5CHFA_enNP1018NP1018&oq=javasctipt&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIRCAEQABgKGAsYgwEYsQMYgAQyEQgCEAAYChgLGIMBGLEDGIAEMgsIAxAAGAoYCxiABDILCAQQABgKGAsYgAQyCwgFEAAYChgLGIAEMgsIBhAAGAoYCxiABDILCAcQABgKGAsYgAQyCwgIEAAYChgLGIAEMgsICRAAGAoYCxiABNIBCDc4NTJqMGo3qAIIsAIB8QXEVr_mvZtsDw&sourceid=chrome&ie=UTF-8
+
+

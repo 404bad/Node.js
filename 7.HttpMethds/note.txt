@@ -1,0 +1,16 @@
+1. HTTP GET  
+→ Used to retrieve (get) data from the server.  
+→ By default, browsers make GET requests when you open a URL.
+
+2. HTTP POST  
+→ Used to send data to the server and create or mutate resources  
+→ Commonly used in form submissions.
+
+3. HTTP PUT  
+→ Used to update an entire existing resource on the server.
+
+4. HTTP PATCH  
+→ Used to partially update an existing resource (change only specific fields).
+
+5. HTTP DELETE  
+→ Used to remove or delete a resource from the server.

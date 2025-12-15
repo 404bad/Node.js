@@ -1,0 +1,13 @@
+Basic working of Node js
+
+request -----> event loop ----> check if it is a blocking operation or not 
+
+if it is a non blocking operation(async) then the request is processed and response is passed to the client
+and if it is blocing operation(synchronous) then the request is pased to the thred pool
+
+in the thread pool only 4 thread (worker) are. there by deafault and the number of thread is always limited
+max number of thread are dependable upon the system
+for exmple a 8 core cpu can have  8 threads
+
+the thread process the blocking operations and the response is passed to the client 
+

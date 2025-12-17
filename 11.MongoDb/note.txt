@@ -23,6 +23,12 @@ Configurable: Minimal (node --inspect --watch).    	Configurable via JSON or fla
 Schema - Define the structure
     Schema - Model
     Using model we do CRUD operations
-    
+
 Schema (blueprint) --> Model (collection) --> CRUD operations (insert, read, update, delete)
+
+
+## Rule of Thumb for return
+
+-- Use return if there’s more code after sending a response or in a conditional branch.
+-- Omit return if sending a response is the last action in the route.
 

@@ -1,0 +1,28 @@
+// "start": "node --inspect --watch index.js"
+
+this is the alternative of nodemon
+
+we can only use --watch alone as well
+
+## Differences		
+
+Auto-restart on change: Yes (node --inspect --watch  18+)	         Yes (nodemon)
+Debugging: 	Yes (node --inspect)	Yes (if used with --inspect nodemon)
+Extra installation:	No(node --inspect --watch)	   Yes (npm i -D nodemon)
+Flexibility: Limited(node --inspect --watch)      	Highly flexible(nodemon)
+Configurable: Minimal (node --inspect --watch).    	Configurable via JSON or flags(nodemon)
+
+
+--> Use node --inspect --watch if you just want lightweight watching + debugging.
+--> Use nodemon if you want a robust development workflow with lots of control over file watching, restarts, and scripts.
+
+
+## How mongoose works
+--> Mongoose is an ODM (Object Data Modeling) library for MongoDB in Node.js
+
+Schema - Define the structure
+    Schema - Model
+    Using model we do CRUD operations
+    
+Schema (blueprint) --> Model (collection) --> CRUD operations (insert, read, update, delete)
+

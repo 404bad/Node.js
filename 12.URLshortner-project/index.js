@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Server is Running" });
 });
 
-app.use("/api/url", urlShortRoutes);
+app.use("/", urlShortRoutes);
 
 connectDb().then(() => {
   app.listen(process.env.PORT, () => {

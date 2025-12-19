@@ -1,4 +1,3 @@
-import { json } from "express";
 import urlModel from "../models/urls.model.js";
 import { generateShortId } from "../utils/genarteNanoid.js";
 
@@ -15,10 +14,14 @@ export const handleGenerateShortId = async (req, res) => {
       redirectUrl: ogUrl.url,
       visitHistory: [],
     });
-    res.status(201).json({ message: "Created", id: shortId });
+    res.status(201).json({
+      message: "Created",
+      shortUrl: `${req.protocol}://${req.get("host")}/${shortId}`,
+    });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
+    // return res.status(500).json({ error: "Internal Server Error" });
+    res.render("index");
   }
 };
 
@@ -69,5 +72,18 @@ export const handleUrlAnalytics = async (req, res) => {
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export const renderUrlsTable = async (req, res) => {
+  try {
+    const urls = await urlModel.find({}).sort({ createdAt: -1 });
+    const urlsWithFull = urls.map((u) => ({
+      ...u._doc,
+      fullUrl: `${req.protocol}://${req.get("host")}/${u.shortId}`,
+    }));
+    res.render("index", { urls: urlsWithFull });
+  } catch (error) {
+    res.status(500).send(error.message);
   }
 };

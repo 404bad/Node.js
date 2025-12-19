@@ -1,0 +1,19 @@
+{
+  "name": "13.ssrinnode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --inspect --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2",
+    "nanoid": "^5.1.6"
+  }
+}

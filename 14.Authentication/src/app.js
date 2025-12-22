@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/user.routes.js";
+import urlRoutes from "./routes/url.routes.js";
 import { globalErrorHandler } from "./middleware/errorHandler.js";
 import { logAccess } from "./utils/logger.js";
 import restrictToLoggedinUserOnly from "./middleware/authStateful.middleware.js";
@@ -22,6 +23,7 @@ app.get("/", restrictToLoggedinUserOnly, (req, res) => {
   res.send("hello Loggin User from server");
 });
 app.use("/user", userRoutes);
+app.use("/url", urlRoutes);
 
 // global error handler
 app.use(globalErrorHandler);

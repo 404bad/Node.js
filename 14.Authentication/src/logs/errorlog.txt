@@ -104,3 +104,91 @@
     at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
     at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:600:14)
     at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:610:14)
+2025-12-22T16:40:54.119Z [ERROR] ValidationError: url validation failed: createdBy: Path `createdBy` is required.
+    at Document.invalidate (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/document.js:3377:32)
+    at validatePath (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/document.js:3152:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async model.$__validate (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/document.js:3093:3)
+    at async model.validate (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/document.js:2670:5)
+    at async model.validateBeforeSave (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/plugins/validateBeforeSave.js:34:7)
+    at async Kareem.execPre (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/kareem/index.js:65:24)
+    at async model.$__save (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/model.js:369:5)
+    at async model.save (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/mongoose/lib/model.js:609:5)
+2025-12-22T16:42:17.575Z [ERROR] ReferenceError: user is not defined
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/url.controller.js:17:16
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/catchAsync.js:3:5
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:582:12)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:291:5)
+2025-12-22T17:07:17.570Z [ERROR] ReferenceError: userId is not defined
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/url.controller.js:13:15
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/catchAsync.js:3:5
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:582:12)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:291:5)
+2025-12-22T17:11:40.537Z [ERROR] Error: Invalid or expired session. Please log in again.
+    at restrictToLoggedinUserOnly (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/middleware/authStateful.middleware.js:17:7)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:342:13)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:297:9
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:582:12)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:291:5)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/app.js:19:3
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:342:13)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:297:9
+2025-12-22T17:49:47.420Z [ERROR] Error: All fields are required
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:15:11
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/catchAsync.js:3:5
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:582:12)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:291:5)
+2025-12-22T17:54:33.043Z [ERROR] ReferenceError: User is not defined
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:75:16
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/catchAsync.js:3:5
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:600:14)
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:610:14)
+2025-12-22T17:56:43.594Z [ERROR] ReferenceError: req is not defined
+    at checkAuth (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/middleware/authStateful.middleware.js:29:21)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:600:14)
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:610:14)
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:664:3)
+2025-12-22T17:57:39.239Z [ERROR] ReferenceError: next is not defined
+    at checkAuth (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/middleware/authStateful.middleware.js:35:3)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at /Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:295:15
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:600:14)
+    at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:610:14)
+    at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:664:3)

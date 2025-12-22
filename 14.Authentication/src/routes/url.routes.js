@@ -1,4 +1,8 @@
 import express from "express";
+import {
+  restrictToLoggedinUserOnly,
+  checkAuth,
+} from "../middleware/authStateful.middleware.js";
 
 import {
   handleGenerateShortid,
@@ -8,8 +12,9 @@ import {
 
 const router = express.Router();
 
-router.post("/", handleGenerateShortid);
+router.post("/", checkAuth, handleGenerateShortid);
 router.get("/:shortId", handleRedirectUrl);
-router.get("/analytics/:shortId", handleGetAnalytics);
+
+router.get("/analytics/:shortId", checkAuth, handleGetAnalytics);
 
 export default router;

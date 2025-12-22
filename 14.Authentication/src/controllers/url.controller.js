@@ -10,10 +10,12 @@ export const handleGenerateShortid = catchAsync(async (req, res) => {
     throw new AppError("All fields are required", 400);
   }
   const shortId = generateNanoid();
+  console.log(req.userId);
   await urlModel.create({
     shortId,
     redirectUrl: url,
     visitHistory: [],
+    createdBy: req.userId,
   });
   res.status(201).json({
     message: "Created",

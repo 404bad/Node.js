@@ -1,7 +1,7 @@
 import { AppError } from "../utils/appError.js";
 import { GetUser } from "../utils/authStateful.js";
 
-const restrictToLoggedinUserOnly = (req, res, next) => {
+export const restrictToLoggedinUserOnly = (req, res, next) => {
   // Check if cookie exists
   const sessionId = req.cookies.uid;
   if (!sessionId) {
@@ -25,4 +25,12 @@ const restrictToLoggedinUserOnly = (req, res, next) => {
   next();
 };
 
-export default restrictToLoggedinUserOnly;
+export const checkAuth = async (req, res, next) => {
+  const sessionId = req.cookies.uid;
+
+  const userId = GetUser(sessionId);
+
+  req.userId = userId;
+
+  next();
+};

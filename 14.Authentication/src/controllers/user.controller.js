@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 
 import USER from "../models/user.model.js";
+import urlModel from "../models/url.model.js";
 import { AppError } from "../utils/appError.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import { SetUser, GetUser } from "../utils/authStateful.js";
@@ -50,7 +51,12 @@ export const handleLogin = catchAsync(async (req, res) => {
 
   const sessionId = uuidv4();
   SetUser(sessionId, user._id);
-  res.cookie("uid", sessionId, { httpOnly: true, secure: false }); // set secure:true in production
+  res.cookie("uid", sessionId, {
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax",
+    maxAge: 1000 * 60 * 60 * 24,
+  }); // set secure:true in production
   res.status(200).json({
     success: true,
     sessionId,
@@ -61,4 +67,13 @@ export const handleLogin = catchAsync(async (req, res) => {
       email: user.email,
     },
   });
+});
+
+//Handle get users urls
+export const handleGetUserById = catchAsync(async (req, res) => {
+  const userId = req.params.id;
+  const user = await USER.findById(userId);
+  const allurls = await urlModel.find({ createdBy: userId });
+
+  return res.status(200).json({ user, allurls });
 });

@@ -1,8 +1,10 @@
 import express from "express";
-import {
-  restrictToLoggedinUserOnly,
-  checkAuth,
-} from "../middleware/authStateful.middleware.js";
+// import {
+//   restrictToLoggedinUserOnly,
+//   checkAuth,
+// } from "../middleware/authStateful.middleware.js";
+
+import { checkAuth } from "../middleware/authStateless.middleware.js";
 
 import {
   handleGenerateShortid,

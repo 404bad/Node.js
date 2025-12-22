@@ -192,3 +192,26 @@
     at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:600:14)
     at param (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:610:14)
     at processParams (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:664:3)
+2025-12-22T21:58:12.983Z [ERROR] Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:111:20)
+    at SetUser (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/authStateless.js:4:14)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
+2025-12-22T21:58:40.580Z [ERROR] Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:111:20)
+    at SetUser (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/authStateless.js:4:14)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
+2025-12-22T21:59:54.109Z [ERROR] TypeError: callback is not a function
+    at failure (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:105:14)
+    at module.exports [as sign] (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:121:16)
+    at SetUser (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/authStateless.js:5:14)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
+2025-12-22T22:00:15.492Z [ERROR] Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:111:20)
+    at SetUser (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/authStateless.js:5:14)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
+2025-12-22T22:05:57.834Z [ERROR] Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/jsonwebtoken/sign.js:111:20)
+    at SetUser (file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/authStateless.js:5:14)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
+2025-12-22T22:07:39.423Z [ERROR] ReferenceError: sessionId is not defined
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:64:5

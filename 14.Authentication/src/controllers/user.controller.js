@@ -5,7 +5,8 @@ import USER from "../models/user.model.js";
 import urlModel from "../models/url.model.js";
 import { AppError } from "../utils/appError.js";
 import { catchAsync } from "../utils/catchAsync.js";
-import { SetUser, GetUser } from "../utils/authStateful.js";
+// import { SetUser, GetUser } from "../utils/authStateful.js";
+import { SetUser } from "../utils/authStateless.js";
 
 //handle signup or create new user
 export const handleSignup = catchAsync(async (req, res) => {
@@ -49,17 +50,18 @@ export const handleLogin = catchAsync(async (req, res) => {
     throw new AppError("Invalid email or password", 401);
   }
 
-  const sessionId = uuidv4();
-  SetUser(sessionId, user._id);
-  res.cookie("uid", sessionId, {
+  //   const sessionId = uuidv4();
+  //   SetUser(sessionId, user._id);
+  const token = SetUser(user);
+  res.cookie("uid", token, {
     httpOnly: true,
-    secure: false,
+    secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: 1000 * 60 * 60 * 24,
-  }); // set secure:true in production
+  });
   res.status(200).json({
     success: true,
-    sessionId,
+    // token,
     message: "Login successful",
     user: {
       id: user._id,
@@ -76,4 +78,19 @@ export const handleGetUserById = catchAsync(async (req, res) => {
   const allurls = await urlModel.find({ createdBy: userId });
 
   return res.status(200).json({ user, allurls });
+});
+
+//Handle Logout
+export const handleLogout = catchAsync((req, res) => {
+  res.clearCookie("uid", {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged out successfully",
+  });
 });

@@ -57,3 +57,15 @@ export const handleGetAnalytics = catchAsync(async (req, res) => {
     visitHistory: result.visitHistory,
   });
 });
+
+// Handle Get All URLs
+
+export const handleGetAllUrls = catchAsync(async (req, res) => {
+  const urls = await urlModel.find();
+
+  res.status(200).json({
+    success: true,
+    count: urls.length,
+    data: urls,
+  });
+});

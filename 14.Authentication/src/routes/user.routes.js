@@ -6,18 +6,21 @@ import {
   handleGetUserById,
   handleLogout,
 } from "../controllers/user.controller.js";
-import { checkAuth } from "../middleware/authStateful.middleware.js";
+import {
+  checkForAuthentication,
+  restrictTo,
+} from "../middleware/authStateless.middleware.js";
 
 const router = express.Router();
 
-router
-  .route("/")
-  .get(handleGetAllUsers) // GET /users → list all users
-  .post(handleSignup);
+// Public
+router.post("/", handleSignup);
 router.post("/login", handleLogin);
-router.get("/:id", checkAuth, handleGetUserById);
-router.post("/logout", handleLogout);
 
+// Protected
+router.get("/", checkForAuthentication, restrictTo("admin"), handleGetAllUsers);
+router.get("/:id", checkForAuthentication, handleGetUserById);
+router.post("/logout", checkForAuthentication, handleLogout);
 export default router;
 
 // “Seeing the cookie in headers is good.

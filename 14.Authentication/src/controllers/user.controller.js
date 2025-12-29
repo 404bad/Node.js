@@ -10,9 +10,9 @@ import { SetUser } from "../utils/authStateless.js";
 
 //handle signup or create new user
 export const handleSignup = catchAsync(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, role } = req.body;
 
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !role) {
     throw new AppError("All fields are required", 400);
   }
 
@@ -22,7 +22,7 @@ export const handleSignup = catchAsync(async (req, res) => {
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  await USER.create({ name, email, password: hashedPassword });
+  await USER.create({ name, email, password: hashedPassword, role: role });
 
   res.status(201).json({ success: true, message: "User created" });
 });

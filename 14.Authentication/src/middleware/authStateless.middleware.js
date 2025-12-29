@@ -1,19 +1,41 @@
 import { AppError } from "../utils/appError.js";
 import { GetUser } from "../utils/authStateless.js";
+import { catchAsync } from "../utils/catchAsync.js";
 
-export const checkAuth = async (req, res, next) => {
-  const token = req.cookies?.uid;
+export const checkForAuthentication = catchAsync(async (req, res, next) => {
+  let token = req.cookies?.uid;
 
-  // the below two lines are for token in  respinse for client which are not a browser since the cookies are the feature of browser
-  //   const userUid = req.headers["Authorization"];
+  // Support non-browser clients (Postman, mobile apps)
+  if (!token && req.headers.authorization?.startsWith("Bearer ")) {
+    token = req.headers.authorization.split(" ")[1];
+  }
 
-  //   const token = userUid.split("Bearer ")[1];
+  req.user = null;
+
+  // Allow public access if no token
+  if (!token) return next();
 
   const user = GetUser(token);
+
   if (!user) {
-    new AppError("Unauthorized", 401);
+    return next(new AppError("Unauthorized", 401));
   }
 
   req.user = user;
   next();
+});
+
+export const restrictTo = (...roles) => {
+  //Collect all arguments passed into this function and put them into an array called roles
+  return (req, res, next) => {
+    if (!req.user) {
+      return next(new AppError("Unauthorized", 401));
+    }
+
+    if (!roles.includes(req.user.role)) {
+      return next(new AppError("Forbidden", 403));
+    }
+
+    next();
+  };
 };

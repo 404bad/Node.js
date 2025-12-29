@@ -221,3 +221,20 @@
     at ServerResponse.send (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/express/lib/response.js:163:12)
     at ServerResponse.json (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/express/lib/response.js:252:15)
     at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:63:19
+2025-12-29T18:16:00.124Z [ERROR] Error: Email already exists
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:21:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-29T18:16:09.126Z [ERROR] Error: Email already exists
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:21:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-12-29T18:17:33.287Z [ERROR] Error: Forbidden
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/middleware/authStateless.middleware.js:36:19
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/middleware/authStateless.middleware.js:25:3
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/utils/catchAsync.js:3:5
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/router/lib/layer.js:152:17)

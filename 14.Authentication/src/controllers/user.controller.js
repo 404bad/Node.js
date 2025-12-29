@@ -59,6 +59,7 @@ export const handleLogin = catchAsync(async (req, res) => {
     sameSite: "lax",
     maxAge: 1000 * 60 * 60 * 24,
   });
+  //   res.send({ token });
   res.status(200).json({
     success: true,
     // token,

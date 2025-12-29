@@ -215,3 +215,9 @@
     at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:55:17
 2025-12-22T22:07:39.423Z [ERROR] ReferenceError: sessionId is not defined
     at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:64:5
+2025-12-29T17:15:06.021Z [ERROR] Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/express/lib/response.js:686:10)
+    at ServerResponse.send (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/express/lib/response.js:163:12)
+    at ServerResponse.json (/Users/kailash/Desktop/Learning/Nodejs/14.Authentication/node_modules/express/lib/response.js:252:15)
+    at file:///Users/kailash/Desktop/Learning/Nodejs/14.Authentication/src/controllers/user.controller.js:63:19

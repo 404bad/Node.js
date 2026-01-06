@@ -36,13 +36,30 @@ export const signinController = async (req, res) => {
     if (!email || !password) {
       return res.status(400).send("Email and password are required");
     }
-    const user = await User.matchPassword(email, password);
-    if (!user) {
-      return res.status(401).send("Invalid email or password");
+    const token = await User.matchPasswordAndGenerateToken(email, password);
+    if (!token) {
+      return res.status(401).render("signin", {
+        error: "Invalid email or password",
+      });
     }
-    return res.redirect("/");
+    return res
+      .cookie("Token", token, {
+        httpOnly: true,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV === "production",
+      })
+      .redirect("/");
   } catch (error) {
     console.error("Signin error:", error);
     return res.status(500).send("Internal Server Error");
   }
+};
+
+export const logoutController = (req, res) => {
+  res.clearCookie("Token", {
+    httpOnly: true,
+    sameSite: "strict",
+    secure: process.env.NODE_ENV === "production",
+  });
+  res.redirect("/");
 };

@@ -2,6 +2,7 @@ import Router from "express";
 import {
   signupController,
   signinController,
+  logoutController,
 } from "../contollers/user.controller.js";
 
 const router = Router();
@@ -14,5 +15,6 @@ router.get("/signup", (req, res) => {
 });
 router.post("/signup", signupController);
 router.post("/signin", signinController);
+router.get("/logout", logoutController);
 
 export default router;

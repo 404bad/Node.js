@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import crypto from "crypto";
+import { createTokenForUser } from "../services/authentication.service.js";
 
 const userSchema = new mongoose.Schema(
   {
@@ -42,7 +43,10 @@ userSchema.pre("save", async function () {
     .toString("hex");
 });
 
-userSchema.statics.matchPassword = async function (email, plainPassword) {
+userSchema.statics.matchPasswordAndGenerateToken = async function (
+  email,
+  plainPassword
+) {
   const user = await this.findOne({ email });
   if (!user) return null;
 
@@ -51,8 +55,9 @@ userSchema.statics.matchPassword = async function (email, plainPassword) {
     .toString("hex");
 
   if (hashedInputPassword !== user.password) return null;
+  const token = createTokenForUser(user);
 
-  return user;
+  return token;
 };
 
 const User = mongoose.model("user", userSchema);

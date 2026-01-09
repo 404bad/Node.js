@@ -1,0 +1,45 @@
+<footer class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- Brand Info -->
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">Blogger</h5>
+                <p>
+                    Blogger is a modern platform to share your thoughts, stories, and ideas with the world.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h6 class="fw-semibold">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+                    <li><a href="/blogs" class="text-white text-decoration-none">Blogs</a></li>
+                    <li><a href="/about" class="text-white text-decoration-none">About</a></li>
+                    <li><a href="/contact" class="text-white text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-md-4 mb-4">
+                <h6 class="fw-semibold">Follow Us</h6>
+                <a href="#" class="text-white text-decoration-none me-3">Facebook</a>
+                <a href="#" class="text-white text-decoration-none me-3">Twitter</a>
+                <a href="#" class="text-white text-decoration-none">Instagram</a>
+            </div>
+
+        </div>
+
+        <hr class="border-light">
+
+        <!-- Copyright -->
+        <div class="text-center">
+            © <span id="year"></span> Blogger. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>

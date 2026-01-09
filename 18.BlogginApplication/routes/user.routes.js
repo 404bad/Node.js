@@ -11,10 +11,12 @@ router.get("/signin", (req, res) => {
   return res.render("signin");
 });
 router.get("/signup", (req, res) => {
-  return res.render("signup");
+  return res.render("signup")
+    ;
 });
 router.post("/signup", signupController);
 router.post("/signin", signinController);
 router.get("/logout", logoutController);
+
 
 export default router;

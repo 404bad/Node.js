@@ -1,55 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('partials/Head') %>
+
+<head>
+  <%- include('partials/Head') %>
     <title>Add Blog</title>
-  </head>
-  <body>
-    <%- include('partials/nav') %>
+</head>
+
+<body>
+  <%- include('partials/nav') %>
 
     <divc class="form-container mb-3">
       <div class="container">
-        <form
-          action="/blogs/create"
-          method="POST"
-          class="container mt-4"
-          enctype="multipart/form-data"
-        >
+        <form action="/blogs/create" method="POST" class="container mt-4" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="title" class="form-label">Blog Title</label>
-            <input
-              type="text"
-              class="form-control"
-              id="title"
-              name="title"
-              placeholder="Enter blog title"
-              aria-describedby="title"
-              required
-            />
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter blog title"
+              aria-describedby="title" required />
           </div>
 
           <div class="mb-3">
             <label for="content" class="form-label">Content</label>
-            <textarea
-              class="form-control"
-              id="content"
-              name="content"
-              rows="6"
-              placeholder="Write your blog content here..."
-              aria-describedby="content"
-              required
-            ></textarea>
+            <textarea class="form-control" id="content" name="content" rows="6"
+              placeholder="Write your blog content here..." aria-describedby="content" required></textarea>
           </div>
 
           <div class="mb-3">
             <label for="coverImg" class="form-label">Cover Image</label>
-            <input
-              type="file"
-              class="form-control"
-              id="coverImg"
-              name="coverImg"
-              aria-describedby="coverImg"
-            />
+            <input type="file" class="form-control" id="coverImg" name="coverImg" aria-describedby="coverImg" />
           </div>
 
           <button type="submit" class="btn btn-primary">Publish Blog</button>
@@ -58,5 +35,7 @@
     </divc>
 
     <%- include('partials/scripts') %>
-  </body>
+      <%- include('partials/footer') %>
+</body>
+
 </html>

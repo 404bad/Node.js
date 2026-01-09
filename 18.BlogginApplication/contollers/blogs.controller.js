@@ -22,9 +22,18 @@ export const createNewBlog = async (req, res) => {
 
   console.log(req.body);
   console.log(req.file);
-  return res.redirect(`/blog/${blog._id}`);
+  return res.redirect(`/blogs/${blog._id}`);
 };
 
 export const getAllBlogs = async (req, res) => {
   const allBlogs = await Blog.find({}).sort("createdAt", -1);
 };
+
+
+export const getBlogById = async (req, res) => {
+  const blog = await Blog.findById(req.params.id).populate("createdBy");
+  return res.render('blogSingle', {
+    user: req.user,
+    blog
+  })
+}

@@ -5,9 +5,6 @@ const secret = "iamdon";
 export const createTokenForUser = (user) => {
   const payload = {
     _id: user._id,
-    email: user.email,
-    fullName: user.fullName,
-    profileImgUrl: user.profileImage,
     role: user.role,
   };
 

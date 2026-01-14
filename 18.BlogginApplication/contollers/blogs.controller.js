@@ -1,4 +1,5 @@
 import Blog from "../models/blog.model.js";
+import { Comment } from "../models/comment.model.js";
 
 export const showAddBlogPage = (req, res) => {
   return res.render("addBlog", {
@@ -29,11 +30,14 @@ export const getAllBlogs = async (req, res) => {
   const allBlogs = await Blog.find({}).sort("createdAt", -1);
 };
 
-
 export const getBlogById = async (req, res) => {
   const blog = await Blog.findById(req.params.id).populate("createdBy");
-  return res.render('blogSingle', {
+  const comments = await Comment.find({ blogId: req.params.id }).populate(
+    "createdBy"
+  );
+  blog.comments = comments;
+  return res.render("blogSingle", {
     user: req.user,
-    blog
-  })
-}
+    blog,
+  });
+};

@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
@@ -9,10 +11,10 @@ import Blog from "./models/blog.model.js";
 
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.set("view engine", "ejs");
-app.set("views"), path.resolve("./views");
+app.set("views", path.resolve("./views"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -27,9 +29,11 @@ app.get("/", async (req, res) => {
 app.use("/user", userRoute);
 app.use("/blogs", blogRoute);
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogger").then(() => {
-  console.log("Mongodb connected");
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+mongoose
+  .connect(`${process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/blogger"}`)
+  .then(() => {
+    console.log("Mongodb connected");
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
+    });
   });
-});
